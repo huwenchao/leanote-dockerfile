@@ -5,15 +5,15 @@
 #
 
 # Pull base image.
-#FROM ubuntu:14.04
+FROM ubuntu:14.04
 ## use docker.cn
-FROM docker.cn/docker/ubuntu:latest
+#FROM docker.cn/docker/ubuntu:latest
 MAINTAINER Nyk Ma <moe@nayuki.info>
 
 # Install.
 ## use cn source
 RUN \
-  sed -i 's%/archive.ubuntu.com%/cn.archive.ubuntu.com%g' /etc/apt/sources.list && \ 
+  sed -i 's%/archive.ubuntu.com%/cn.archive.ubuntu.com%g' /etc/apt/sources.list && \
   sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
   apt-get update && \
   apt-get -y upgrade && \
